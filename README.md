@@ -7,6 +7,10 @@
 
 <img src="https://user-images.githubusercontent.com/6392766/92717163-af7b0200-f357-11ea-9dc3-6f86d0c21d96.png" width="297" height="76"/>
 
+
+## ⚠️ April 5th Codesigning issue
+If you are running iOS SDK v16+ and are experiecing a codesigning issue, [please follow these steps](https://github.com/intercom/intercom-ios/wiki/Codesigning-Issue) to resolve it.
+
 ## Onboard, retain and support mobile users at scale
 Engage customers with email, push, and in‑app messages and support them with an integrated knowledge base and help desk.
 
@@ -42,9 +46,8 @@ We check for new messages when your app opens and whenever your customer or your
 
 ## Installation
 
-Intercom for iOS supports iOS 13+. 
-Xcode 14 is required to build Intercom iOS SDK.
-The binary size for Intercom is **2.3MB**.
+Intercom for iOS supports iOS 15+. 
+Xcode 15 is required to build Intercom iOS SDK.
 
 ### CocoaPods
 Cocoapods 1.11.0 is required to install Intercom.
@@ -56,9 +59,7 @@ Add the Intercom pod into your Podfile and run `pod install`.
 ```
 
 ### Swift Package Manager
-Add `https://github.com/intercom/intercom-ios` as a Swift Package Repository in Xcode and follow the instructions to add `Intercom` as a Swift Package.
-
-![spm](https://user-images.githubusercontent.com/3185423/104470769-fac94980-55b1-11eb-80e5-929e77bc5558.png)
+Add `https://github.com/intercom/intercom-ios-sp` as a Swift Package Repository in Xcode and follow the instructions to add `Intercom` as a Swift Package.
 
 ### Manual Installation
 
@@ -74,35 +75,27 @@ Make sure "Copy items if needed" is selected and click Finish.
 
 <img width="613" alt="embed_sign" src="https://user-images.githubusercontent.com/3185423/102403646-7e594000-3fde-11eb-89e6-0dc280bf24b2.png">
 
-## Update Info.plist
-
-#### Photo Library usage:
-
-With the exception of apps that _only_ support iOS 14+, when installing Intercom, you'll need to make sure that you have a `NSPhotoLibraryUsageDescription` entry in your `Info.plist`.
-
-For apps that support iOS 13, this is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) to access the photo library. It is necessary when installing Intercom due to the image upload functionality. Users will be prompted for the photo library permission only when they tap the image upload button.
-
-On iOS 14+, Intercom uses the new `PHPickerViewController` API which does not require requesting users for photo library permission. 
-
 ## Example app
-There are example apps provided [here](https://github.com/intercom/intercom-ios/tree/master/Examples) for Objective-C and Swift, as well as an example built with SwiftUI.
+There are example apps provided [here](https://github.com/intercom/intercom-ios/tree/master/Examples) for Objective-C and Swift, as well as an example built with SwiftUI. We also have some sample code for handling Intercom push notifications manually.
 
 ## Setup and Configuration
 
-* Our [installation guide](https://developers.intercom.com/docs/ios-installation) contains full setup and initialisation instructions.
-* Read ["Configuring Intercom for iOS"](https://developers.intercom.com/docs/ios-configuration).
-* Read our guide on [Push Notifications](https://developers.intercom.com/docs/ios-push-notifications).
-*  Please contact us on [Intercom](https://intercom.io) with any questions you may have, we're only a message away!
+* Our [installation guide](https://developers.intercom.com/installing-intercom/ios/installation/) contains full setup and initialisation instructions.
+* Read ["Data Hosting Region Configuration for iOS"](https://developers.intercom.com/installing-intercom/ios/data-hosting-region-configuration/).
+* Read our guide on [Push Notifications](https://developers.intercom.com/installing-intercom/ios/push-notifications/).
+* Please contact us on [Intercom](https://intercom.com) with any questions you may have, we're only a message away!
 
 ## Customer Support
 
-👋  Contact us with any issues at our [Intercom Developer Hub available here](https://developers.intercom.com/docs/intercom-mobile-installation?utm_source=github&utm_campaign=ios-help). If you bump into any problems or need more support, just start a conversation using Intercom there and it will be immediately routed to our Customer Support Engineers.
+👋  Contact us with any issues at our [Intercom Developer Hub available here](https://developers.intercom.com/installing-intercom/) by clicking on the Messenger in the bottom right. If you bump into any problems or need more support, just start a conversation using Intercom there and it will be immediately routed to our Customer Support Engineers.
 
-## Cordova/Phonegap Support
-Looking for Cordova/Phonegap support? We have a [Cordova Plugin](https://github.com/intercom/intercom-cordova) for Intercom 🎉
+You can also check out the [Mobile SDKs section of the Intercom Community](https://community.intercom.com/mobile-sdks-24) to ask a question or find an answer.
+
+## React Native Support
+Looking for React Native support? We have a [React Native Plugin](https://github.com/intercom/intercom-react-native) for Intercom 🎉
 
 ## What about events, push notifications, company and user data?
 
-Intercom for iOS has support for all these things. For full details please read our [documentation](https://developers.intercom.com/docs/ios-configuration).
+Intercom for iOS has support for all these things. For full details please read our [documentation](https://developers.intercom.com/installing-intercom/ios/about-the-sdk/).
 
 

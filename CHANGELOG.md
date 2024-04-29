@@ -1,3 +1,422 @@
+## 17.0.2
+###### Release Date: 18-04-2024
+
+### 🚀 Enhancements
+* Removed required reason API calls that are now disallowed by Apple.
+
+## 17.0.1  
+###### Release Date: 12-04-2024
+
+### 🐛 Bug Fixes
+* Fixes an issue that was causing a crash when opening a conversation from a post.
+* Improvements made to image caching.
+
+## 17.0.0 
+###### Release Date: 04-04-2024
+
+### 🚀 Enhancements
+* The minimum iOS deployment target is now 15. Customers wishing to use this and future versions of Intercom's iOS SDK will require iOS 15 as their minimum deployment target.
+For customers who are still targeting iOS 13 or 14 and choose not to update, all previous versions of the iOS SDK will continue to function as normal.
+
+### 🐛 Bug Fixes
+* Fixed an issue where messages in a conversation were not being displayed fully.
+* Updated the SDK's `PrivacyInfo.xcprivacy` to include new API declarations required by Apple.
+
+## 16.6.1
+###### Release Date: 21-03-2024
+
+### 🐛 Bug Fixes
+* Fixed an issue where microphone permission was required even if you were only taking photos with the SDK.
+* Fixed a bug that wouldn't allow users to input an email when creating a ticket.
+
+**Note**
+On April 3rd 2024, we will be **deprecating support for iOS 13 & 14**. Customers wishing to use the latest versions of Intercom's iOS SDK will **require iOS 15 as a minimum deployment version**.
+If you choose not to update, all previous versions of the iOS SDK will continue to function as normal.
+
+## 16.6.0
+###### Release Date: 08-03-2024
+
+### 🚀 Enhancements
+* Added a button to open previous messages in programmatically launched conversations
+
+## 16.5.9
+###### Release Date: 27-02-2024
+
+### 🐛 Bug Fixes
+* Bug fixes and performance improvements.
+
+## 16.5.8 
+###### Release Date: 26-02-2024
+
+### 🐛 Bug Fixes
+* Fixed an issue that was causing compatibility issues with apps that were using Sentry's iOS SDK.
+
+## 16.5.7
+###### Release Date: 23-02-2024
+
+### 🚀 Enhancements
+* Added support for custom ticket states external labelling
+
+## 16.5.6   
+###### Release Date: 15-02-2024
+
+### 🐛 Bug Fixes
+* Fixed an issue that was causing problems when launching Intercom on devices running iOS 13.
+
+## 16.5.5  
+###### Release Date: 01-02-2024
+
+### 🚀 Enhancements
+* It is now possible to configure whether users are able to start a new conversation when they tap the 😔 reaction on an Article.
+* The build number of your app is now submitted to Intercom along with the app version e.g. 2.1.0(30). This will allow customers to target specific builds of their app within Intercom, instead of just using the version number. 
+
+### 🐛 Bug Fixes
+* Fixed a issue where poor network conditions could cause an app to hang and sometimes crash. This is showing up as an error with `[IntercomSDK_IntercomNexusSocket sendWebSocketMessage:]` in crash logs.
+* The composer was spanning the full width of the screen on iPad. This is now fixed.
+* Fixed an issue where dismissing Intercom on an iPad was causing the app to freeze.
+* Fixes some `NSSecureCoding` warnings that were being displayed in Xcode's console.
+
+
+## 16.5.4   
+###### Release Date: 24-01-2024
+
+### 🐛 Bug Fixes
+* Fixed an issue that was triggering high CPU usage in apps using Intercom. This also caused some apps to hang for a period of time.
+This happened when the user's network connection dropped. Reported as [an issue](https://community.intercom.com/mobile-sdks-24/intercom-sdk-attributed-to-high-battery-usage-in-xcode-6414) in our Intercom Community and also showed up on the `Energy` section of Xcode's Organizer.
+
+## 16.5.3   
+###### Release Date: 23-01-2024
+
+### 🐛 Bug Fixes
+* Fixed a crash caused by: `Deadlock detected: calling this method on the main queue with outstanding async updates is not permitted and will deadlock`.
+* Fixed a crash with boolean attribute collectors.   
+
+## 16.5.2   
+###### Release Date: 19-01-2024
+
+### 🐛 Bug Fixes
+* Fixed a memory issue that was causing some crashes identified by the following symbols: 
+    * `IntercomNexusSocket listenForWebSocketMessages`
+    * `IntercomNexusSocket isConnected`
+* Fixed another memory issue `swift_unknownObjectUnownedLoadStrong` for the Messenger Homescreen.
+* Fixed a crash caused by: `Attempted to reload item identifier that does not exist in the snapshot`.
+* Fixed an issue with attribute collectors in a conversation that was leading to closed conversations being re-opened.    
+
+## 16.5.1  
+###### Release Date: 16-01-2024
+
+This release contains some important bug fixes. We recommend that all customers update to this version.
+
+### 🐛 Bug Fixes
+* Fixed a memory issue that was causing a crash. This crash was identified by the symbol `swift_unknownObjectUnownedTakeStrong`.
+* Fixed a couple of crashes that occurred when uploading image attachments to a conversation:
+    * `[NSURL URLByAppendingPathComponent:]`
+    * `ITBImageFIleLoader getRotationAngleFromExistingProperties`
+* Fixed an issue that was preventing Fin from working as expected in some scenarios.
+* Fixed an issue that was enabling users to start a conversation from the Messages space when they should not have been.
+* Fixed an issue that was causing visiblity problems with the `Powered by Intercom` badge.
+
+
+## 16.5.0  
+###### Release Date: 11-01-2024
+
+### 🚀 Enhancements
+* You can now [choose how Fin shows up](https://www.intercom.com/help/en/articles/7837525-customizing-fin-in-the-messenger#h_2ebc0a7872) when a customer starts a conversation: decide whether to show bot expectations or match to teammates, when the conversation starts with Fin.
+
+## 16.4.0  
+###### Release Date: 05-01-2024
+
+### 🚀 Enhancements
+* Camera Input - We've added the ability to use your device's camera to add photos and videos to a conversation.
+
+## 16.3.2 
+###### Release Date: 20-12-2023
+
+### 🐛 Bug Fixes
+* Fixes a [potential crash](https://community.intercom.com/mobile-sdks-24/ios-17-0-app-crashes-once-the-intercom-post-popup-shows-up-5140) happening when a user opened certain post messages on iOS 17.
+
+## 16.3.1 
+###### Release Date: 17-11-2023
+
+### 🐛 Bug Fixes
+* Resolves crash on iOS 13.
+* Fixes a potential crash when a user rapidly sent messages at the start of a new conversation.
+* Fixes an issue where messages were hidden after a conversation was started with an existing ticket.
+
+## 16.3.0 
+###### Release Date: 14-11-2023
+
+### 🚀 Enhancements
+* Bot performance improvements.
+
+### 🐛 Bug Fixes
+* Fixes a translation issue.
+
+## 16.2.3  
+###### Release Date: 03-11-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that was preventing Universal Links from opening correctly.
+* Fixed an issue that was cutting off messages on iPad.
+* Fixed an issue that was preventing the Status Page app from opening on the homescreen.
+* Added support for `WKAppBoundDomains`. Customers who use App Bound Domains simply need to add `intercom.help` to their list of `WKAppBoundDomains` in their `Info.plist`. This will ensure that Help Center articles load correctly.
+* Fixed an issue where it tapping on an image with a link was not working.
+* Tapping on an in-app now opens the correct conversation.
+
+
+## 16.2.2  
+###### Release Date: 31-10-2023
+
+### 🐛 Bug Fixes
+* Fixes issue where `IntercomDidStartNewConversation` notification was not firing.
+* Fixes a homescreen issue where the company logo would no longer load after the host app had been backgrounded.
+
+## 16.2.1 
+###### Release Date: 24-10-2023
+
+### 🚀 Enhancements
+* Articles now support anchor links. Tapping on a URL with an anchor link will bring users to a specific part of an Article.
+
+## 16.2.0
+###### Release Date: 19-10-2023
+
+### 🚀 Enhancements
+**📱 New Feature: Fin is now streaming AI answers! This means customers don't have to wait for the whole AI answer to generate before getting the support they need. Instead, Fin starts displaying a response the moment the first word comes in.**
+
+## 16.1.2  
+###### Release Date: 18-10-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that was causing some messages not to deliver in realtime.
+
+
+## 16.1.1 
+###### Release Date: 11-10-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that prevented some users from selecting any images to upload in a conversation.
+
+## 16.1.0 
+###### Release Date: 10-10-2023
+
+### 🚀 Enhancements
+
+
+**📱 New Feature: Set better expectations with your customers by customising the Start Conversation button in your Messenger**
+
+![mobile](https://private-user-images.githubusercontent.com/31664218/273871603-bad1cda3-3f33-412b-bf5f-7e1e05e2199b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY5MzUxNzYsIm5iZiI6MTY5NjkzNDg3NiwicGF0aCI6Ii8zMTY2NDIxOC8yNzM4NzE2MDMtYmFkMWNkYTMtM2YzMy00MTJiLWJmNWYtN2UxZTA1ZTIxOTliLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEwMTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMDEwVDEwNDc1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI3ZDJhZmFkZDlmZTExMWY0YmFjYzU2N2Y2MmMzYzU2N2YxM2Y4NWI4YmI0YWQxOTIwM2MxNGNhNTkzZWFhN2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.mU8C4qlrSY15b8KeFWsHxOlzpVk9PmeINk8T3KDYAkU)
+
+👋 With this release, you can select from a list of options to customize the Start Conversation button in the Messenger. This can be changed in Messenger settings under the "Conversations" section and will affect the Start Conversation button on Messenger Home and in spaces Iike Messages and Help.
+
+### 🐛 Bug Fixes
+* Fixed an issue where the navigation bar and message replies were dissapearing under certain circumstances.
+
+## 16.0.3 
+###### Release Date: 06-10-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that was causing a crash when loading a user's avatar.
+
+## 16.0.2 
+###### Release Date: 05-10-2023
+
+### 🐛 Bug Fixes
+* Patches a [security vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2023-4863) with the lipwebp library.
+
+## 16.0.1 
+###### Release Date: 27-09-2023
+
+### 🐛 Bug Fixes
+* Fixed a memory retain cycle that was causing Intercom to crash under certain conditions.
+
+## 16.0.0
+###### Release Date: 22-09-2023
+
+### 🚀 Enhancements
+* Support for iOS 17 including:
+  * Privacy manifest added
+  * Digitally signed SDK
+* The functions that were deprecated in v14.0.0 have now been fully removed. You can see the list of functions and their replacements [here](https://developers.intercom.com/installing-intercom/ios/migration-guide-v14/)
+
+### 🐛 Bug Fixes
+* Resolved an issue that was causing a crash when long pressing messages on iOS 17
+
+### NOTE: Xcode 15 required for use
+* In order to work with this version of Intercom, you will need to be using Xcode 15.
+
+## 15.2.3 
+###### Release Date: 20-09-2023
+
+### 🐛 Bug Fixes
+* Resolved an issue that was breaking debugging functionality on Xcode 14. 
+
+## 15.2.2
+###### Release Date: 14-09-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue where Tickets were not being marked as read.
+
+### 🚀 Enhancements
+* Added improved support for dymanic font sizes on the Tickets space.
+
+## 15.2.1
+###### Release Date: 04-09-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue where signing the SDK for Xcode 15 was failing
+
+## 15.2.0
+###### Release Date: 30-08-2023
+
+**📱 New feature: Tickets Space**
+👋 Introducing the new Tickets Space. Enabling the Ticket Space in your Messenger lets end users view and get updates on all their tickets in one location inside the Messenger.
+
+### 🐛 Bug Fixes
+* Fixed a memory leak issue with `NSURLSession`. 
+
+### NOTE: Swift Package Manager Changes
+* Intercom's `Package.swift` has now been removed from this repo.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+
+## 15.1.5
+###### Release Date: 18-08-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue where some web socket connections could crash under certain circumstances
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-sp
+
+## 15.1.4
+###### Release Date: 01-08-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue where conversation ratings were not being sent correctly
+* Fixed an issue where opening the inbox could crash under certain circumstances
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-s
+
+## 15.1.3   
+###### Release Date: 26-07-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that didn't populate the composer when programmatically starting a conversation with a message.
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-sp
+
+## 15.1.2  
+###### Release Date: 25-07-2023
+
+### 🚀 Enhancements
+* New API to present a conversation programmatically. 
+
+### 🐛 Bug Fixes
+* Fixed a memory retain cycle that was causing a crash under certain circumstances.
+* Fixed an issue that was preventing the user from entering data on a custom bot input field.
+
+## 15.1.1  
+###### Release Date: 20-07-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue where starting a new conversation could cause a crash.
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-sp
+
+## 15.1.0 
+###### Release Date: 18-07-2023
+
+### 🚀 Enhancements
+* Improvements to the core conversation screen user experience including:
+  * Better accessibility support with large font sizes and voiceover.
+  * Right to left language support.
+  * Ability to copy messages.
+
+### 🐛 Bug Fixes
+* Fixed an issue that caused the Messenger home screen logo to fail to load.
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-sp
+
+## 15.0.3 
+###### Release Date: 10-07-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue that caused connectivity issues for The Messenger under certain circumstances.
+
+### NOTE: Swift Package Manager Changes
+* In order to improve support for Swift Package Manager, we have created [a new GitHub repository](https://github.com/intercom/intercom-ios-sp) for Intercom's Swift Package.
+* If you wish to integrate Intercom using SPM, please use https://github.com/intercom/intercom-ios-sp as the package URL.
+* Support for the old package URL will be discontinued in a number of weeks. Please migrate to using https://github.com/intercom/intercom-ios-sp
+
+
+## 15.0.2 
+###### Release Date: 3-07-2023
+
+### 🚀 Enhancements
+* Improved Intercom's networking code to ensure messaging is faster and more reliable.
+* Fixed threading issues that were being logged when Xcode's `Thread Performance Checker` was enabled. Thanks to [everyone](https://community.intercom.com/mobile-sdks-24/the-error-about-incorrect-threads-using-in-xcode-14-120) who reported this in our Intercom Community.
+* Made some small UI enhancements.  
+* Removed some errors about unarchiving that were showing up in the XCode console.
+* dSYM files are now embedded within `Intercom.xcframework`.
+
+
+## 15.0.1 
+###### Release Date: 23-06-2023
+
+### 🚀 Enhancements
+* Added a warning to inform developers that manually handling Intercom push notifications may not be working as expected. Please read our [developer docs](https://developers.intercom.com/installing-intercom/docs/ios-push-notifications#manually) and try our [demo app](https://github.com/intercom/intercom-ios/tree/master/Examples) for examples on how to correctly handle Intercom push notifications.
+* Intercom now supports Hindi and Swahili as languages in the Messenger. 
+
+### 🐛 Bug Fixes
+* Fixed an issue that was preventing push tokens from being sent to Intercom's servers under certain circumstances. This will resolve some issues where push notifications were failing to deliver to a device, eventhough push notifications were enabled for that user.
+* Fixed an issue that was causing a namespace collision for apps that use `Lottie` as a dependency.
+* Fixed an issue that was causing a `key value coding-compliant` crash when loading a XIB file. Reported on Intercom's Community hub   [here](https://community.intercom.com/mobile-sdks-24/sdk-ios-swift-crash-intercom-13-and-14-crashes-4009) and [here](https://community.intercom.com/mobile-sdks-24/the-ios-intercom-sdk-14-0-6-crashes-whenever-i-try-to-present-it-using-default-present-method-or-present-home-method-if-i-use-present-messages-it-works-fine-previous-versions-of-intercom-worked-fine-is-this-a-known-issue-2724).
+* Fixed an issue that was preventing push notification deep links from opening during the launch of a React Native app.
+
+
+## 15.0.0 
+###### Release Date: 09-05-2023
+
+### 🚀 Enhancements
+
+**Meet Fin 👋 a breakthrough AI bot powered by GPT-4, OpenAI's most advanced AI model. Fin solves complex problems and provides safer, more accurate answers than any AI bot on the market.**
+
+|     |  |  |
+| -------- | ------- | ------ |
+| ![Image](https://user-images.githubusercontent.com/94445025/236837455-72f80723-51bb-4eea-916e-ec9e8c2ac24c.png) | ![Image](https://user-images.githubusercontent.com/94445025/236837465-aefa88c0-c316-4b3f-a0fc-b5a307e9235d.png) | ![Image](https://user-images.githubusercontent.com/94445025/236839443-0863bf2e-31be-4a0a-8280-a8454644e3f5.png) |
+
+**Fin...**
+* Holds complete support conversations in plain English, powered by GPT-4 and Intercom’s proprietary ML technology.
+* Requires zero setup. Just point it at your help center and turn it on.
+* Provides trustworthy, accurate answers based on your existing support content.
+* Seamlessly passes more complex questions directly to your human support team.
+
+**Learn more 👉 www.intercom.com/fin** 
+
+## 14.1.0
+###### Release Date: 04-04-2023
+
+### 🐛 Bug Fixes
+* Fixed an issue which caused a crash when dismissing Surves on iPad.
+
+### 🚀 Enhancements
+* New Feature: Attach Files to Tickets - End users can now upload files when submitting Tickets in the Messenger.
+* New Feature: End users can now navigate through articles on your collections and sub collections (up to 3 levels deep).
+* The Messenger now opens to 100% height when the Home space is disabled in Messenger settings.
+
 ## 14.0.7
 ###### Release Date: 03-02-2023
 
